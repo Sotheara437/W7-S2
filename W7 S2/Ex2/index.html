@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create Account</h2>
+    <form>
+      <div class="grid-container">
+        <div>
+          <label for="firstName">First Name*</label>
+          <input type="text" id="firstName" placeholder="Enter your first name">
+        </div>
+        <div>
+          <label for="lastName">Last Name*</label>
+          <input type="text" id="lastName" placeholder="Enter your last name">
+        </div>
+        <div class="full-width">
+          <label for="email">Email*</label>
+          <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div>
+          <label for="password">Password*</label>
+          <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div>
+          <label for="confirmPassword">Confirm Password*</label>
+          <input type="password" id="confirmPassword" placeholder="Confirm your password">
+        </div>
+        <div class="full-width">
+          <label>Gender:</label>
+          <div class="inline-options">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+          </div>
+        </div>
+        <div class="full-width">
+          <label>Hobbies:</label>
+          <div class="inline-options">
+            <label><input type="checkbox" name="hobbies" value="music"> Music</label>
+            <label><input type="checkbox" name="hobbies" value="sports"> Sports</label>
+            <label><input type="checkbox" name="hobbies" value="travel"> Travel</label>
+            <label><input type="checkbox" name="hobbies" value="movies"> Movies</label>
+          </div>
+        </div>
+        <div>
+          <label for="sourceIncome">Source of Income:</label>
+          <select id="sourceIncome">
+            <option value="employed">Employed</option>
+            <option value="student">Student</option>
+            <option value="unemployed">Unemployed</option>
+          </select>
+        </div>
+        <div>
+          <label for="incomeSlider">Income:</label>
+          <div class="slider-container">
+            <input type="range" id="incomeSlider" min="0" max="100" step="5" value="20" oninput="updateIncomeValue()">
+            <span id="incomeValue" class="income-box">20K</span>
+          </div>
+        </div>
+
+        <!-- Upload Profile Picture -->
+        <div>
+          <label for="profilePicture">Upload Profile Picture:</label>
+          <input type="file" id="profilePicture">
+        </div>
+
+        <!-- Age -->
+        <div>
+          <label for="age">Age:</label>
+          <input type="number" id="age" value="18" min="0">
+        </div>
+        <div class="full-width">
+          <label for="bio">Bio:</label>
+          <textarea id="bio" rows="4" placeholder="Write something about yourself"></textarea>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Create</button>
+    </form>
+  </div>
+
+  <script>
+    function updateIncomeValue() {
+      const slider = document.getElementById("incomeSlider");
+      const incomeDisplay = document.getElementById("incomeValue");
+      incomeDisplay.textContent = slider.value + "K";
+    }
+  </script>
+</body>
+</html>
